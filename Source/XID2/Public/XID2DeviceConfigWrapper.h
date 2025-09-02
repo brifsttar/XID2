@@ -1,6 +1,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include <memory>
 #include "XID2DevicePortStruct.h"
 #include "XID2DeviceConfigWrapper.generated.h"
 
