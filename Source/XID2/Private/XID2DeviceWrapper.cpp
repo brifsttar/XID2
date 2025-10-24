@@ -513,10 +513,10 @@ uint32 UXID2DeviceWrapper::GetPulseDuration() const
     return NativeDevice ? NativeDevice->GetPulseDuration() : 0;
 }
 
-void UXID2DeviceWrapper::SetPulseDuration(uint32 Duration)
+void UXID2DeviceWrapper::SetPulseDuration(int Duration)
 {
     if (NativeDevice)
-        NativeDevice->SetPulseDuration(Duration);
+        NativeDevice->SetPulseDuration(uint32(Duration));
 }
 
 uint32 UXID2DeviceWrapper::GetPulseTableBitMask()
@@ -666,7 +666,7 @@ void UXID2DeviceWrapper::ClearResponsesFromBuffer() {
         NativeDevice->ClearResponsesFromBuffer();
 }
 
-void UXID2DeviceWrapper::RaiseLines(uint32 LinesBitmask, bool bLeaveRemainingLines) {
+void UXID2DeviceWrapper::RaiseLines(int LinesBitmask, bool bLeaveRemainingLines) {
 	if (NativeDevice)
 		NativeDevice->RaiseLines(LinesBitmask, bLeaveRemainingLines);
 }

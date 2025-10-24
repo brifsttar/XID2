@@ -298,8 +298,8 @@ public:
     //UFUNCTION(BlueprintCallable, Category="XID2|Device")
     uint32 GetPulseDuration() const;
 
-    //UFUNCTION(BlueprintCallable, Category="XID2|Device")
-    void SetPulseDuration(uint32 Duration);
+    UFUNCTION(BlueprintCallable, Category="XID2|Device")
+    void SetPulseDuration(int Duration);
 
     //UFUNCTION(BlueprintCallable, Category="XID2|Device")
     uint32 GetPulseTableBitMask();
@@ -379,8 +379,8 @@ public:
     UFUNCTION(BlueprintCallable, Category="XID2|Device")
     void ClearResponsesFromBuffer();
 
-    //UFUNCTION(BlueprintCallable, Category="XID2|Device")
-    void RaiseLines(uint32 LinesBitmask, bool bLeaveRemainingLines = false);
+    UFUNCTION(BlueprintCallable, Category="XID2|Device")
+    void RaiseLines(int LinesBitmask, bool bLeaveRemainingLines = false);
 
     //UFUNCTION(BlueprintCallable, Category="XID2|Device")
     void LowerLines(uint32 LinesBitmask, bool bLeaveRemainingLines = false);
