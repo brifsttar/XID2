@@ -17,9 +17,11 @@ public class XID2Library : ModuleRules
 			PublicAdditionalLibraries.Add(Path.Combine(LiDir, "xid_device_driver.lib"));
 
 			// Delay-load the DLL, so we can load it from the right place first
+			PublicDelayLoadDLLs.Add("ftd2xx.dll");
 			PublicDelayLoadDLLs.Add("xid_device_driver.dll");
 
 			// Ensure that the DLL is staged along with the executable
+			RuntimeDependencies.Add(Path.Combine(LiDir, "ftd2xx.dll"));
 			RuntimeDependencies.Add(Path.Combine(LiDir, "xid_device_driver.dll"));
 		}
 	}

@@ -9,20 +9,17 @@
 
 #define LOCTEXT_NAMESPACE "FXID2Module"
 
-void FXID2Module::StartupModule()
-{
-	// This code will execute after your module is loaded into memory; the exact timing is specified in the .uplugin file per-module
-
-	// Get the base directory of this plugin
+void FXID2Module::StartupModule() {
 	FString BaseDir = IPluginManager::Get().FindPlugin("XID2")->GetBaseDir();
 
-	// Add on the relative location of the third party dll and load it
-	FString LibraryPath;
+	FString LibsPath, XID2Path, ftd2xxPath;
 #if PLATFORM_WINDOWS
-	LibraryPath = FPaths::Combine(*BaseDir, TEXT("Source/ThirdParty/XID2Library/Win64/xid_device_driver.dll"));
+	LibsPath = FPaths::Combine(*BaseDir, TEXT("Source/ThirdParty/XID2Library/Win64"));
+	XID2Path = FPaths::Combine(*LibsPath, TEXT("xid_device_driver.dll"));
+	ftd2xxPath = FPaths::Combine(*LibsPath, TEXT("ftd2xx.dll"));
 #endif // PLATFORM_WINDOWS
-
-	XID2LibraryHandle = !LibraryPath.IsEmpty() ? FPlatformProcess::GetDllHandle(*LibraryPath) : nullptr;
+	ftd2xxLibraryHandle = !ftd2xxPath.IsEmpty() ? FPlatformProcess::GetDllHandle(*ftd2xxPath) : nullptr;
+	XID2LibraryHandle = !XID2Path.IsEmpty() ? FPlatformProcess::GetDllHandle(*XID2Path) : nullptr;
 }
 
 void FXID2Module::ShutdownModule()
