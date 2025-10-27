@@ -9,6 +9,9 @@
 
 #define LOCTEXT_NAMESPACE "FXID2Module"
 
+DEFINE_LOG_CATEGORY(LogXID2);
+
+
 void FXID2Module::StartupModule() {
 	FString BaseDir = IPluginManager::Get().FindPlugin("XID2")->GetBaseDir();
 

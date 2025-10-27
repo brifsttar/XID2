@@ -4,6 +4,8 @@
 
 #include "Modules/ModuleManager.h"
 
+DECLARE_LOG_CATEGORY_EXTERN(LogXID2, Log, All);
+
 class FXID2Module : public IModuleInterface
 {
 public:
