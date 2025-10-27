@@ -45,7 +45,7 @@ int32 UXID2DeviceScannerSubsystem::GetDeviceCount() const
     return Cedrus::XIDDeviceScanner::GetDeviceScanner().DeviceCount();
 }
 
-UXID2DeviceWrapper* UXID2DeviceScannerSubsystem::GetDeviceAtIndex(int32 Index)
+UXID2DeviceWrapper* UXID2DeviceScannerSubsystem::GetDeviceAtIndex(int32 Index) const
 {
     auto& Scanner = Cedrus::XIDDeviceScanner::GetDeviceScanner();
     auto DevicePtr = Scanner.DeviceConnectionAtIndex(Index);
@@ -57,7 +57,7 @@ UXID2DeviceWrapper* UXID2DeviceScannerSubsystem::GetDeviceAtIndex(int32 Index)
     return Wrapper;
 }
 
-UXID2DeviceWrapper* UXID2DeviceScannerSubsystem::GetDeviceOfGivenProductID(EXidProductID ProductID)
+UXID2DeviceWrapper* UXID2DeviceScannerSubsystem::GetDeviceOfGivenProductID(EXidProductID ProductID) const
 {
     auto& Scanner = Cedrus::XIDDeviceScanner::GetDeviceScanner();
     auto DevicePtr = Scanner.GetDeviceOfGivenProductID(static_cast<Cedrus::XidProductID>(ProductID));
@@ -74,7 +74,7 @@ int32 UXID2DeviceScannerSubsystem::GetDevconfigCount() const
     return Cedrus::XIDDeviceScanner::GetDeviceScanner().DevconfigCount();
 }
 
-UXID2DeviceConfigWrapper* UXID2DeviceScannerSubsystem::GetDevconfigAtIndex(int32 Index)
+UXID2DeviceConfigWrapper* UXID2DeviceScannerSubsystem::GetDevconfigAtIndex(int32 Index) const
 {
     auto& Scanner = Cedrus::XIDDeviceScanner::GetDeviceScanner();
     auto ConfigPtr = Scanner.DevconfigAtIndex(Index);
@@ -86,7 +86,7 @@ UXID2DeviceConfigWrapper* UXID2DeviceScannerSubsystem::GetDevconfigAtIndex(int32
     return Wrapper;
 }
 
-UXID2DeviceConfigWrapper* UXID2DeviceScannerSubsystem::GetConfigForGivenDevice(int32 DeviceID, int32 ModelID, int32 MajorFirmwareVer)
+UXID2DeviceConfigWrapper* UXID2DeviceScannerSubsystem::GetConfigForGivenDevice(int32 DeviceID, int32 ModelID, int32 MajorFirmwareVer) const
 {
     auto& Scanner = Cedrus::XIDDeviceScanner::GetDeviceScanner();
     auto ConfigPtr = Scanner.GetConfigForGivenDevice(DeviceID, ModelID, MajorFirmwareVer);

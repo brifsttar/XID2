@@ -36,17 +36,17 @@ public:
     int32 GetDeviceCount() const;
 
     UFUNCTION(BlueprintCallable, Category="XID2|Scanner")
-    UXID2DeviceWrapper* GetDeviceAtIndex(int32 Index);
+    UXID2DeviceWrapper* GetDeviceAtIndex(int32 Index) const;
 
     UFUNCTION(BlueprintCallable, Category="XID2|Scanner")
-    UXID2DeviceWrapper* GetDeviceOfGivenProductID(EXidProductID ProductID);
+    UXID2DeviceWrapper* GetDeviceOfGivenProductID(EXidProductID ProductID) const;
 
     UFUNCTION(BlueprintCallable, Category="XID2|Scanner")
     int32 GetDevconfigCount() const;
 
     UFUNCTION(BlueprintCallable, Category="XID2|Scanner")
-    UXID2DeviceConfigWrapper* GetDevconfigAtIndex(int32 Index);
+    UXID2DeviceConfigWrapper* GetDevconfigAtIndex(int32 Index) const;
 
     UFUNCTION(BlueprintCallable, Category="XID2|Scanner")
-    UXID2DeviceConfigWrapper* GetConfigForGivenDevice(int32 DeviceID, int32 ModelID, int32 MajorFirmwareVer);
+    UXID2DeviceConfigWrapper* GetConfigForGivenDevice(int32 DeviceID, int32 ModelID, int32 MajorFirmwareVer) const;
 };
