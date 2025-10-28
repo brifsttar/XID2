@@ -8,6 +8,10 @@ The main entry point is `XID2DeviceScannerSubsystem`, which can be accessed from
 
 From here, you should be able to access all XID2 methods and objects, using the same API as the [xid_device_library](https://github.com/cedrus-opensource/xid_device_library).
 
+Below is a very simple Blueprint example to raise lines on a [c-pod device](https://cedrus.com/c-pod/).
+
+<img width="1280" height="399" alt="image" src="https://github.com/user-attachments/assets/e57d4e27-a0ed-4d13-ac44-b1aa3e969218" />
+
 ## Compatibility
 
 * The plugin is Windows-only.
@@ -15,5 +19,5 @@ From here, you should be able to access all XID2 methods and objects, using the 
 
 ## Disclaimer
 
-* At the moment, the plugin hasn't been test with any actual device
+* At the moment, the plugin has only been tested with a c-pod device
 * Most of the wrapping code has been written by a generative AI
